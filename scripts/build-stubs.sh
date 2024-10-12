@@ -4,11 +4,13 @@
     # Current dir should be the root of the repo
     cd $(dirname $0)/..
 
-    git clone --depth 1 --branch main https://github.com/adafruit/circuitpython.git
-
+    git clone https://github.com/adafruit/circuitpython.git
+    
     cd circuitpython
-    git submodule init
-    git submodule update extmod/ulab
+    git checkout 9.0.5
+    
+    # use the make commands instead of the git commands
+    make fetch-all-submodules
 
     # Use a venv for these
     # Using this name so circuitpython repo already gitignores it
