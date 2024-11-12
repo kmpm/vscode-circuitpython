@@ -16,5 +16,8 @@
         "Blinka",
         "drivelist",
         "pylance"
+    ],
+    "python.analysis.exclude": [
+        "circuitpython"
     ]
 }
