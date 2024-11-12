@@ -31,7 +31,7 @@ export class Board implements QuickPickItem {
       this.label = "*:" + this.description;
     }
     if(m["site_path"]){
-      this.site = `https://circuitpython.org/board/${m["site_path"]}/`
+      this.site = `https://circuitpython.org/board/${m["site_path"]}/`;
     };
   }
 
