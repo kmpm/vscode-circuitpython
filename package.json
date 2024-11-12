@@ -32,10 +32,7 @@
     "workspaceContains:/code.txt",
     "workspaceContains:/main.py",
     "workspaceContains:/main.txt",
-    "workspaceContains:/boot_out.txt",
-    "onCommand:circuitpython.openSerialMonitor",
-    "onCommand:circuitpython.selectSerialPort",
-    "onCommand:circuitpython.closeSerialMonitor"
+    "workspaceContains:/boot_out.txt"
   ],
   "main": "./out/extension.js",
   "contributes": {
