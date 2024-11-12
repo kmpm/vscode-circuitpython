@@ -24,7 +24,12 @@ export class Board implements QuickPickItem {
     this.pid = m["pid"];
     this.product = m["product"];
     this.manufacturer = m["manufacturer"];
-    this.label = this.manufacturer + ":" + this.product;
+    this.description = m["description"];
+    if (this.manufacturer && this.product) {
+      this.label = this.manufacturer + ":" + this.product;
+    } else {
+      this.label = "*:" + this.description;
+    }
     if(m["site_path"]){
       this.site = `https://circuitpython.org/board/${m["site_path"]}/`
     };
@@ -37,7 +42,7 @@ export class Board implements QuickPickItem {
     }
     let jsonData: Buffer = fs.readFileSync(metadataFile);
     let boardMetadata: Array<BoardData> = JSON.parse(jsonData.toString());
-    boardMetadata.forEach(b => {
+    boardMetadata.forEach(b => {   
       Board._boards.set(Board.key(b["vid"], b["pid"]), new Board(b));
     });
   }
